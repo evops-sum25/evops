@@ -1,6 +1,6 @@
 # EvOps
 
-## Qucik start
+## Quick Start
 
 ### How to run the application
 
