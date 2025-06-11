@@ -1,0 +1,38 @@
+services:
+  postgres:
+    network_mode: host
+    image: postgres:17.5-bookworm
+    restart: unless-stopped
+    env_file:
+      - .env
+    user: postgres
+    volumes:
+      - pgdata:/var/lib/postgresql/data/
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready"]
+      interval: 10s
+      retries: 5
+      start_period: 30s
+      timeout: 10s
+
+  backend:
+    network_mode: host
+    build:
+      context: backend/
+      dockerfile: prod.Dockerfile
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    env_file:
+      - backend/.env
+
+  website:
+    network_mode: host
+    build:
+      context: website/
+      dockerfile: prod.Dockerfile
+    restart: unless-stopped
+
+volumes:
+  pgdata:
