@@ -1,6 +1,12 @@
-[submodule "website"]
-	path = website
-	url = https://github.com/evops-sum25/evops-website
 [submodule "backend"]
 	path = backend
 	url = https://github.com/evops-sum25/evops-backend
+[submodule "ml"]
+	path = ml
+	url = https://github.com/evops-sum25/evops-ml
+[submodule "android"]
+	path = android
+	url = https://github.com/evops-sum25/evops-android
+[submodule "website"]
+	path = website
+	url = https://github.com/evops-sum25/evops-website
