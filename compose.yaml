@@ -1,5 +1,6 @@
 services:
   postgres:
+    network_mode: host
     image: postgres:17.5-bookworm
     restart: unless-stopped
     env_file:
@@ -13,10 +14,9 @@ services:
       retries: 5
       start_period: 30s
       timeout: 10s
-    ports:
-      - 5432:5432
 
   backend:
+    network_mode: host
     build:
       context: backend/
       dockerfile: prod.Dockerfile
@@ -26,16 +26,14 @@ services:
         condition: service_healthy
     env_file:
       - backend/.env
-    ports:
-      - 8080:8080
 
   website:
+    network_mode: host
     build:
       context: website/
       dockerfile: prod.Dockerfile
     restart: unless-stopped
-    ports:
-      - 3000:3000
+
   
 volumes:
   pgdata:
