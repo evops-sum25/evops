@@ -1,4 +1,3 @@
-## [unreleased]
 ### Core
 
 #### <!-- 0 -->🚀 Features
@@ -7,6 +6,7 @@
 
 #### <!-- 1 -->🐛 Bug Fixes
 
+- Pls work
 - Pls work
 
 #### <!-- 10 -->💼 Other
@@ -18,6 +18,7 @@
 - Add build instructions (#17)
 - Introduce small stylistic changes (#19)
 - Capitalize first letters in headings
+- Update changelog
 
 #### <!-- 7 -->⚙️ Miscellaneous Tasks
 
