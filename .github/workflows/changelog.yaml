@@ -1,6 +1,6 @@
 name: Changelog and Release
 
-on: [ push, pull_request ]
+on: [ pull_request ]
 
 jobs:
   changelog:
