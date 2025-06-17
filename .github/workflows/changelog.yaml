@@ -35,10 +35,3 @@ jobs:
           git add CHANGELOG.md
           git commit -m "docs(changelog): Update changelog" || echo "No changes to commit"
           git push
-      - name: Upload the binary releases
-        uses: svenstaro/upload-release-action@v2
-        with:
-          file: CHANGELOG.md
-          repo_token: ${{ secrets.RELEASE_TOKEN }}
-          tag: ${{ github.ref }}
-          body: ${{ steps.git-cliff.outputs.content }}
