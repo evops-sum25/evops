@@ -6,7 +6,6 @@ jobs:
   changelog:
     name: Generate changelog and release
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request' && github.event.pull_request.merged == true
     outputs:
       release_body: ${{ steps.git-cliff.outputs.content }}
     permissions:
