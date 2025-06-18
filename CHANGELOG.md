@@ -26,6 +26,7 @@
 
 - Initial commit
 - Add ml and android submodules
+- Update Backend
 
 
 
@@ -44,6 +45,7 @@
 
 #### <!-- 0 -->🚀 Features
 
+- Add server-ext submodule
 - Redirect from `/` to `/swagger`
 
 #### <!-- 10 -->💼 Other
@@ -69,6 +71,7 @@
 
 #### <!-- 7 -->⚙️ Miscellaneous Tasks
 
+- Edit .env.example for new compose file
 - Update paths to client-ext
 - Update client-ext
 - Add sol and mit licenses
