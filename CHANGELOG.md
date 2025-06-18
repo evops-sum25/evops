@@ -29,6 +29,7 @@
 #### <!-- 5 -->🎨 Styling
 
 - Format compose.yaml
+- Format changelog configs
 
 #### <!-- 7 -->⚙️ Miscellaneous Tasks
 
