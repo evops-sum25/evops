@@ -31,6 +31,7 @@
 - Edit the .env.example for new compose file (#26)
 - Update submodules
 - Update ml submodule
+- Update android submodule
 
 
 
@@ -38,6 +39,7 @@
 
 #### <!-- 0 -->🚀 Features
 
+- Create backend models (#12)
 - Implement ui components of event details screen (#10)
 - Set up dev connection (#9)
 - Implement ui components of event list screen (#7)
