@@ -26,7 +26,7 @@
 
 - Initial commit
 - Add ml and android submodules
-- Update Backend
+- Edit the .env.example for new compose file (#26)
 
 
 
