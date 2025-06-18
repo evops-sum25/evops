@@ -25,6 +25,10 @@
 - Update changelog
 - Update docker instructions
 
+#### <!-- 5 -->🎨 Styling
+
+- Format compose.yaml
+
 #### <!-- 7 -->⚙️ Miscellaneous Tasks
 
 - Initial commit
