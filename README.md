@@ -1,4 +1,4 @@
-# EvOps
+# EvOps :whale:
 
 ## Quick Start
 
