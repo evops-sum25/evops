@@ -1,6 +1,6 @@
 name: Changelog and Release
 
-on: [ push, pull_request ]
+on: [ push ]
 
 jobs:
   changelog:
@@ -29,9 +29,11 @@ jobs:
           GITHUB_REPO: ${{ github.repository }}
 
       - name: Commit the CHANGELOG.md file
+        if: github.event_name == 'push'
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
           git add CHANGELOG.md
-          git commit -m "docs(changelog): Update changelog" || echo "No changes to commit"
-          git push
+          git commit -m "Renew changelog" || echo "No changes to commit"
+          git push 
+          
