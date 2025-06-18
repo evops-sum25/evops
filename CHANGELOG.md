@@ -9,6 +9,7 @@
 
 - Create the changelog when 'push' happens
 - Activate the actions
+- Avoid 'network_mode: host' in compose file and change the changelog workflow file to not add 'Update changelog' to the changelog   (#21)
 
 #### <!-- 10 -->💼 Other
 
@@ -19,8 +20,6 @@
 - Add build instructions (#17)
 - Introduce small stylistic changes (#19)
 - Capitalize first letters in headings
-- Update changelog
-- Update changelog
 - Update changelog
 
 #### <!-- 7 -->⚙️ Miscellaneous Tasks
