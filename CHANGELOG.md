@@ -4,6 +4,7 @@
 
 - Add compose file (#16)
 - Add automated changelog (#20)
+- Add Dockerfile and .env.example for ml server
 
 #### <!-- 1 -->🐛 Bug Fixes
 
@@ -15,6 +16,8 @@
 #### <!-- 10 -->💼 Other
 
 - Specify correct paths in dockerfile
+- Adding ml server to compose file
+- Adding ml server to compose file
 
 #### <!-- 3 -->📚 Documentation
 
