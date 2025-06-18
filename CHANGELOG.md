@@ -4,6 +4,7 @@
 
 - Add compose file (#16)
 - Add automated changelog (#20)
+- Add Dockerfile and .env.example for ml server
 
 #### <!-- 1 -->🐛 Bug Fixes
 
@@ -34,7 +35,13 @@
 
 #### <!-- 0 -->🚀 Features
 
+- Implement ui components of event details screen (#10)
+- Set up dev connection (#9)
 - Implement ui components of event list screen (#7)
+
+#### <!-- 3 -->📚 Documentation
+
+- Create README.md
 
 #### <!-- 7 -->⚙️ Miscellaneous Tasks
 
@@ -45,11 +52,13 @@
 
 #### <!-- 0 -->🚀 Features
 
+- Add basic CRUD endpoints (#16)
 - Add server-ext submodule
 - Redirect from `/` to `/swagger`
 
 #### <!-- 10 -->💼 Other
 
+- Install libpq-dev (#19)
 - Don't copy .env to docker container (#12)
 - Use debian for prod
 - Create prod dockerfile
@@ -71,7 +80,7 @@
 
 #### <!-- 7 -->⚙️ Miscellaneous Tasks
 
-- Edit .env.example for new compose file
+- Edit .env.example for new compose file (#17)
 - Update paths to client-ext
 - Update client-ext
 - Add sol and mit licenses
@@ -84,10 +93,18 @@
 
 #### <!-- 0 -->🚀 Features
 
+- Write stub grpc server (#16)
+- Add 5 artificial users and create profile retrieval algorithm
+- Create 5 artificial user profiles (#22)
+- Create a pandas data frame with post descriptions (#18)
 - Add automatic post classification (#15)
 - Add grpc server stab
 - Extract keywords from preprocessed messages (#10)
 - Preprocess messages (#6)
+
+#### <!-- 1 -->🐛 Bug Fixes
+
+- Change post-desc df and add user-info df
 
 #### <!-- 3 -->📚 Documentation
 
@@ -95,6 +112,9 @@
 
 #### <!-- 7 -->⚙️ Miscellaneous Tasks
 
+- Rename rec-sys ipynb
+- Move rec-sys ipynb
+- Move data folder
 - Switch to remote model
 
 
@@ -108,8 +128,14 @@
 
 - Make the UI working correct(#14)
 
+#### <!-- 5 -->🎨 Styling
+
+- Integrate prettier (#15)
+
 #### <!-- 7 -->⚙️ Miscellaneous Tasks
 
+- Update client-ext
+- Add daisyui (#16)
 - Update client-ext
 - Initial commit
 
