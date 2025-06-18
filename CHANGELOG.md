@@ -16,6 +16,7 @@
 
 - Specify correct paths in dockerfile
 - Adding ml server to compose file
+- Adding ml server to compose file
 
 #### <!-- 3 -->📚 Documentation
 
