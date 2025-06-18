@@ -27,7 +27,7 @@ services:
     env_file:
       - backend/.env
     ports:
-      - "8080:8080"
+      - 8080:8080
 
   website:
     build:
@@ -35,9 +35,9 @@ services:
       dockerfile: prod.Dockerfile
     restart: unless-stopped
     ports:
-      - "3000:3000"
+      - 3000:3000
 
-  ml-server: 
+  ml-server:
     build:
       context: ml/
       dockerfile: prod.Dockerfile
