@@ -45,3 +45,4 @@ jobs:
           commit-message: "Renew changelog"
           title: "Update CHANGELOG.md"
           body: "Automated changelog update"
+          base: ${{ github.event.pull_request.head.ref }}
