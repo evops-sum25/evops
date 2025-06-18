@@ -1,6 +1,6 @@
 name: Changelog and Release
 
-on: [ push, pull_request ]
+on: [ push ]
 
 jobs:
   changelog:
@@ -37,12 +37,3 @@ jobs:
           git commit -m "Renew changelog" || echo "No changes to commit"
           git push 
           
-      - name: Create Pull Request for changelog
-        if: github.event_name == 'pull_request'
-        uses: peter-evans/create-pull-request@v5
-        with:
-          token: ${{ secrets.RELEASE_TOKEN }}
-          commit-message: "Renew changelog"
-          title: "Update CHANGELOG.md"
-          body: "Automated changelog update"
-          base: ${{ github.event.pull_request.head.ref }}
