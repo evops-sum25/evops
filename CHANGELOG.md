@@ -20,6 +20,7 @@
 - Introduce small stylistic changes (#19)
 - Capitalize first letters in headings
 - Update changelog
+- Update changelog
 
 #### <!-- 7 -->⚙️ Miscellaneous Tasks
 
