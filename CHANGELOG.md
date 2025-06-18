@@ -24,6 +24,7 @@
 - Capitalize first letters in headings
 - Update changelog
 - Update docker instructions
+- Add Deeply Sick to title
 
 #### <!-- 5 -->🎨 Styling
 
