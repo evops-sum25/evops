@@ -30,6 +30,7 @@
 - Add ml and android submodules
 - Edit the .env.example for new compose file (#26)
 - Update submodules
+- Update ml submodule
 
 
 
@@ -107,6 +108,10 @@
 #### <!-- 1 -->🐛 Bug Fixes
 
 - Change post-desc df and add user-info df
+
+#### <!-- 10 -->💼 Other
+
+- Add Dockerfile and .env.example for deployment via docker compose (#24)
 
 #### <!-- 3 -->📚 Documentation
 
