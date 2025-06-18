@@ -37,5 +37,15 @@ services:
     ports:
       - "3000:3000"
 
+  ml-server: 
+    build:
+      context: ml/
+      dockerfile: prod.Dockerfile
+    restart: unless-stopped
+    env_file:
+      - ml/.env
+    ports:
+      - 50051:50051
+
 volumes:
   pgdata:
