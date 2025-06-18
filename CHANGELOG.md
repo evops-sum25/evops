@@ -23,6 +23,7 @@
 - Introduce small stylistic changes (#19)
 - Capitalize first letters in headings
 - Update changelog
+- Update docker instructions
 
 #### <!-- 7 -->⚙️ Miscellaneous Tasks
 
