@@ -10,6 +10,7 @@
 - Create the changelog when 'push' happens
 - Activate the actions
 - Avoid 'network_mode: host' in compose file and change the changelog workflow file to not add 'Update changelog' to the changelog   (#21)
+- Add postgres dependencies
 
 #### <!-- 10 -->💼 Other
 
@@ -58,6 +59,7 @@
 
 #### <!-- 10 -->💼 Other
 
+- Install libpq-dev (#19)
 - Don't copy .env to docker container (#12)
 - Use debian for prod
 - Create prod dockerfile
