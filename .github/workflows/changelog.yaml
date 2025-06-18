@@ -33,10 +33,9 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
-          git checkout -b temp-changelog
           git add CHANGELOG.md
           git commit -m "Renew changelog" || echo "No changes to commit"
-          git push origin temp-changelog
+          git push 
           
       - name: Create Pull Request for changelog
         if: github.event_name == 'pull_request'
@@ -46,5 +45,3 @@ jobs:
           commit-message: "Renew changelog"
           title: "Update CHANGELOG.md"
           body: "Automated changelog update"
-          branch: "update-changelog-${{ github.event.pull_request.number }}"
-          base: ${{ github.event.pull_request.head.ref }}
