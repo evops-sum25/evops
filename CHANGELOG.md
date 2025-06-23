@@ -39,6 +39,7 @@
 - Update submodules
 - Update ml submodule
 - Update android submodule
+- Update all submodules
 
 
 
@@ -50,6 +51,10 @@
 - Implement ui components of event details screen (#10)
 - Set up dev connection (#9)
 - Implement ui components of event list screen (#7)
+
+#### <!-- 1 -->🐛 Bug Fixes
+
+- Fit event image with max width (#17)
 
 #### <!-- 3 -->📚 Documentation
 
@@ -70,6 +75,7 @@
 
 #### <!-- 10 -->💼 Other
 
+- Use debian in all dockerfiles (#31)
 - Install libpq-dev (#19)
 - Don't copy .env to docker container (#12)
 - Use debian for prod
@@ -78,6 +84,7 @@
 
 #### <!-- 2 -->🚜 Refactor
 
+- Simplify error handling (#29)
 - Add tags and event_tags tables
 - Fix paths to client-ext
 
@@ -92,6 +99,7 @@
 
 #### <!-- 7 -->⚙️ Miscellaneous Tasks
 
+- Connect server-ext
 - Edit .env.example for new compose file (#17)
 - Update paths to client-ext
 - Update client-ext
@@ -122,12 +130,23 @@
 
 - Add Dockerfile and .env.example for deployment via docker compose (#24)
 
+#### <!-- 2 -->🚜 Refactor
+
+- Introduce small changes
+
 #### <!-- 3 -->📚 Documentation
 
+- Add README.md
 - Add header and description
+
+#### <!-- 5 -->🎨 Styling
+
+- Specify crate features in alphabetical order
 
 #### <!-- 7 -->⚙️ Miscellaneous Tasks
 
+- Update server-ext
+- Add sol and mit licenses
 - Rename rec-sys ipynb
 - Move rec-sys ipynb
 - Move data folder
@@ -150,6 +169,7 @@
 
 #### <!-- 7 -->⚙️ Miscellaneous Tasks
 
+- Install prettier-plugin-organize-attributes
 - Update client-ext
 - Add daisyui (#16)
 - Update client-ext
