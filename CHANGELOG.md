@@ -40,6 +40,7 @@
 - Update ml submodule
 - Update android submodule
 - Update all submodules
+- Update submodules
 
 
 
@@ -69,6 +70,7 @@
 
 #### <!-- 0 -->🚀 Features
 
+- Don't store profile pictures (#33)
 - Add basic CRUD endpoints (#16)
 - Add server-ext submodule
 - Redirect from `/` to `/swagger`
@@ -84,6 +86,7 @@
 
 #### <!-- 2 -->🚜 Refactor
 
+- Move evops-models to client-ext
 - Simplify error handling (#29)
 - Add tags and event_tags tables
 - Fix paths to client-ext
