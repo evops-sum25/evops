@@ -34,6 +34,8 @@ services:
       context: website/
       dockerfile: prod.Dockerfile
     restart: unless-stopped
+    depends_on:
+      - backend
     ports:
       - 3000:3000
 
