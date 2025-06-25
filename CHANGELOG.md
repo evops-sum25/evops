@@ -30,6 +30,7 @@
 
 - Format compose.yaml
 - Format changelog configs
+- Add newline at the end
 
 #### <!-- 7 -->⚙️ Miscellaneous Tasks
 
