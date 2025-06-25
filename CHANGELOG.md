@@ -41,6 +41,7 @@
 - Update android submodule
 - Update all submodules
 - Update submodules
+- Add .idea to .gitignore
 
 
 
