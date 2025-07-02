@@ -1,0 +1,67 @@
+name: ML server Continuous integration
+
+on:
+  push:
+    branches: [main, 45-create-ci-for-ml-server]
+  pull_request:
+    branches: [main]
+
+jobs:
+  backend-ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v4
+        with:
+          submodules: "recursive"
+
+      - name: Install stable toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+          override: true
+
+      - name: Install protobuf compiler
+        run: sudo apt-get update && sudo apt-get install -y protobuf-compiler
+
+      - name: Build passing
+        run: |
+          cd ml
+          cd server
+          cargo check
+          cd ..
+          cd server-ext
+          cargo check
+
+      - name: Test Suite
+        run: |
+          cd ml
+          cd server
+          cargo test
+          cd ..
+          cd server-ext
+          cargo test
+
+      - name: Run cargo fmt
+        run: |
+          cd ml
+          cd server
+          cargo fmt --all -- --check
+          cd ..
+          cd server-ext
+          cargo fmt --all -- --check
+
+      - name: Run cargo clippy
+        run: |
+          cd ml
+          cd server
+          cargo clippy --all-targets
+          cd ..
+          cd server-ext
+          cargo clippy --all-targets
+
+                  
+
+
+      
