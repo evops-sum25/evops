@@ -64,8 +64,3 @@ jobs:
           cd server-ext
           cd crate
           cargo clippy --all-targets
-
-                  
-
-
-      
