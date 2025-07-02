@@ -29,38 +29,34 @@ jobs:
         run: |
           cd backend
           cargo check
-          cd client-ext
-          cargo check
-          cd ..
           cd server-ext
+          cargo check
+          cd client-ext
           cargo check
 
       - name: Test Suite
         run: |
           cd backend
           cargo test
-          cd client-ext
-          cargo test
-          cd ..
           cd server-ext
+          cargo test
+          cd client-ext
           cargo test
 
       - name: Run cargo fmt
         run: |
           cd backend
           cargo fmt --all -- --check
-          cd client-ext
-          cargo fmt --all -- --check
-          cd ..
           cd server-ext
+          cargo fmt --all -- --check
+          cd client-ext
           cargo fmt --all -- --check
 
       - name: Run cargo clippy
         run: |
           cd backend
           cargo clippy --all-targets
-          cd client-ext
-          cargo clippy --all-targets
-          cd ..
           cd server-ext
+          cargo clippy --all-targets
+          cd client-ext
           cargo clippy --all-targets
