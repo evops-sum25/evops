@@ -1,0 +1,40 @@
+name: Continuous deployment to a single server
+
+on:
+  workflow_run:
+    workflows:
+      [
+        Website Continuous integration,
+        Backend Continuous integration,
+        ML server Continuous integration,
+      ]
+    types:
+      - completed
+
+jobs:
+  single-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install sshpass
+        run: sudo apt-get install -y sshpass
+
+      - name: Test SSH connection
+        run: |
+          sshpass -p "${{ secrets.SSH_PASSWORD }}" \
+            ssh -o StrictHostKeyChecking=no \
+            ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "echo 'Connection successful!'"
+
+      - name: Deploy project
+        run: |
+          sshpass -p "${{ secrets.SSH_PASSWORD }}" \
+            ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "
+              cd ${{ secrets.PROJECT_PATH }} && \
+              git config pull.rebase true && \
+              git fetch && \
+              git pull && \
+              git submodule update --init --force && \
+              docker compose down && \
+              docker compose build --pull && \
+              docker compose up -d"
