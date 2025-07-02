@@ -1,4 +1,4 @@
-name: Website Continuous Integration
+name: Website Continuous integration
 
 on:
   push:
@@ -7,10 +7,8 @@ on:
     branches: [main]
 
 jobs:
-  setup:
+  website-ci:
     runs-on: ubuntu-latest
-    outputs:
-      cache-hit: ${{ steps.pnpm-cache.outputs.cache-hit }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -30,7 +28,6 @@ jobs:
         run: |
           echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
       - name: Cache pnpm dependencies
-        id: cache
         uses: actions/cache@v4
         with:
           path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
@@ -41,66 +38,12 @@ jobs:
         run: |
           cd website
           pnpm install
-
-  lint:
-    needs: setup
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          submodules: "recursive"
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-      - name: Run lint
+      - name: Run checks
         run: |
           cd website
           pnpm lint
-
-  test:
-    needs: setup
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          submodules: "recursive"
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-      - name: Run tests
-        run: |
-          cd website
           pnpm test
-
-  typecheck:
-    needs: setup
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          submodules: "recursive"
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-      - name: Run typecheck
-        run: |
-          cd website
           pnpm typecheck
-
-  build:
-    needs: [lint, test, typecheck]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          submodules: "recursive"
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
       - name: Build project
         run: |
           cd website

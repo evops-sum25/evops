@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  check:
+  backend-ci:
     name: Check
     runs-on: ubuntu-latest
     steps:
@@ -26,7 +26,7 @@ jobs:
       - name: Install protobuf compiler
         run: sudo apt-get update && sudo apt-get install -y protobuf-compiler
 
-      - name: Run cargo check
+      - name: Build passing
         run: |
           cd backend
           cargo check
@@ -36,26 +36,7 @@ jobs:
           cd server-ext
           cargo check
 
-  test:
-    name: Test Suite
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout sources
-        uses: actions/checkout@v4
-        with:
-          submodules: "recursive"
-
-      - name: Install stable toolchain
-        uses: actions-rs/toolchain@v1
-        with:
-          profile: minimal
-          toolchain: stable
-          override: true
-
-      - name: Install protobuf compiler
-        run: sudo apt-get update && sudo apt-get install -y protobuf-compiler
-
-      - name: Run cargo test
+      - name: Test Suite
         run: |
           cd backend
           cargo test
@@ -64,26 +45,6 @@ jobs:
           cd ..
           cd server-ext
           cargo test
-
-  lints:
-    name: Lints
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout sources
-        uses: actions/checkout@v4
-        with:
-          submodules: "recursive"
-
-      - name: Install stable toolchain
-        uses: actions-rs/toolchain@v1
-        with:
-          profile: minimal
-          toolchain: stable
-          override: true
-          components: rustfmt, clippy
-
-      - name: Install protobuf compiler
-        run: sudo apt-get update && sudo apt-get install -y protobuf-compiler
 
       - name: Run cargo fmt
         run: |
@@ -104,3 +65,8 @@ jobs:
           cd ..
           cd server-ext
           cargo clippy --all-targets
+
+                  
+
+
+      
