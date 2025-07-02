@@ -2,7 +2,7 @@ name: ML server Continuous integration
 
 on:
   push:
-    branches: [main, 45-create-ci-for-ml-server]
+    branches: [main]
   pull_request:
     branches: [main]
 
