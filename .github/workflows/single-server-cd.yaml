@@ -1,8 +1,6 @@
 name: Continuous deployment to a single server
 
 on:
-  push:
-    branches: [main, 47-create-cd-to-a-single-server]
   workflow_run:
     workflows:
       [
@@ -10,29 +8,25 @@ on:
         "ML server Continuous integration",
         "Website Continuous integration",
       ]
-    branches: [main, 47-create-cd-to-a-single-server]
     types:
       - completed
 
 jobs:
   single-deploy:
-    if: |
-      github.event_name == 'push' &&
-      (
-        github.event_name == 'workflow_run' &&
-        github.event.workflow_run.conclusion == 'success' &&
-        contains(fromJson('["Backend Continuous integration", "ML server Continuous integration", "Website Continuous integration"]'), github.event.workflow_run.name)
-      )
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Install sshpass
         run: sudo apt-get install -y sshpass
+
       - name: Test SSH connection
         run: |
           sshpass -p "${{ secrets.SSH_PASSWORD }}" \
             ssh -o StrictHostKeyChecking=no \
             ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "echo 'Connection successful!'"
+
       - name: Deploy project
         run: |
           sshpass -p "${{ secrets.SSH_PASSWORD }}" \
