@@ -32,7 +32,8 @@ jobs:
           cargo check
           cd ..
           cd server-ext
-          cd crate
+          cargo check
+          cd client-ext
           cargo check
 
       - name: Test Suite
@@ -42,7 +43,8 @@ jobs:
           cargo test
           cd ..
           cd server-ext
-          cd crate
+          cargo test
+          cd client-ext
           cargo test
 
       - name: Run cargo fmt
@@ -52,7 +54,8 @@ jobs:
           cargo fmt --all -- --check
           cd ..
           cd server-ext
-          cd crate
+          cargo fmt --all -- --check
+          cd client-ext
           cargo fmt --all -- --check
 
       - name: Run cargo clippy
@@ -62,5 +65,6 @@ jobs:
           cargo clippy --all-targets
           cd ..
           cd server-ext
-          cd crate
+          cargo clippy --all-targets
+          cd client-ext
           cargo clippy --all-targets
