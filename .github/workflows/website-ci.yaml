@@ -38,9 +38,9 @@ jobs:
           pnpm install
       - name: Run checks
         run: |
-          cd frontend
+          cd website
           pnpm check
       - name: Build project
         run: |
-          cd frontend
+          cd website
           pnpm build
