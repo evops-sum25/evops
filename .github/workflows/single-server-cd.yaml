@@ -1,13 +1,6 @@
 name: Continuous deployment to a single server
 
-on:
-  workflow_run:
-    workflows:
-      - Backend Continuous integration
-      - ML server Continuous integration
-      - Website Continuous integration
-    types:
-      - completed
+on: [workflow_dispatch]
 
 jobs:
   single-deploy:
