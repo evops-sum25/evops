@@ -1,4 +1,4 @@
-name: Backend Continuous integration
+name: ML server Continuous integration
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  backend-ci:
+  ml-ci:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout sources
@@ -27,40 +27,40 @@ jobs:
 
       - name: Build passing
         run: |
-          cd backend
-          cargo check
-          cd client-ext
+          cd ml
+          cd server
           cargo check
           cd ..
           cd server-ext
+          cd crate
           cargo check
 
       - name: Test Suite
         run: |
-          cd backend
-          cargo test
-          cd client-ext
+          cd ml
+          cd server
           cargo test
           cd ..
           cd server-ext
+          cd crate
           cargo test
 
       - name: Run cargo fmt
         run: |
-          cd backend
-          cargo fmt --all -- --check
-          cd client-ext
+          cd ml
+          cd server
           cargo fmt --all -- --check
           cd ..
           cd server-ext
+          cd crate
           cargo fmt --all -- --check
 
       - name: Run cargo clippy
         run: |
-          cd backend
-          cargo clippy --all-targets
-          cd client-ext
+          cd ml
+          cd server
           cargo clippy --all-targets
           cd ..
           cd server-ext
+          cd crate
           cargo clippy --all-targets
