@@ -24,10 +24,9 @@ jobs:
           override: true
 
       - name: Run cargo check
-        uses: actions-rs/cargo@v1
-        with:
-          command: check
-          working-directory: ./backend
+        run: |
+          cd backend
+          cargo check
 
   test:
     name: Test Suite
@@ -46,10 +45,9 @@ jobs:
           override: true
 
       - name: Run cargo test
-        uses: actions-rs/cargo@v1
-        with:
-          command: test
-          working-directory: ./backend
+        run: |
+          cd backend
+          cargo test
 
   lints:
     name: Lints
@@ -69,15 +67,11 @@ jobs:
           components: rustfmt, clippy
 
       - name: Run cargo fmt
-        uses: actions-rs/cargo@v1
-        with:
-          command: fmt
-          args: --all -- --check
-          working-directory: ./backend
+        run: |
+          cd backend
+          cargo fmt --all -- --check
 
       - name: Run cargo clippy
-        uses: actions-rs/cargo@v1
-        with:
-          command: clippy
-          args: --all-targets
-          working-directory: ./backend
+        run: |
+          cd backend
+          cargo clippy --all-targets
