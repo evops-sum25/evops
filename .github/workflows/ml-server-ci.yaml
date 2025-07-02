@@ -2,7 +2,7 @@ name: ML server Continuous integration
 
 on:
   push:
-    branches: [main]
+    branches: [main, 47-create-cd-to-a-single-server]
   pull_request:
     branches: [main]
 
