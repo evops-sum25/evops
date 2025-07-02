@@ -2,7 +2,7 @@ name: Website Continuous integration
 
 on:
   push:
-    branches: [main, 47-create-cd-to-a-single-server]
+    branches: [main]
   pull_request:
     branches: [main]
 
@@ -39,7 +39,7 @@ jobs:
           cd website
           pnpm install
       - name: Run checks
-        continue-on-error: true  # WARNING: will be fixed in future
+        continue-on-error: true # WARNING: will be fixed in future
         run: |
           cd website
           pnpm lint

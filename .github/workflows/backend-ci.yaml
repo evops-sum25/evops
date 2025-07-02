@@ -2,7 +2,7 @@ name: Backend Continuous integration
 
 on:
   push:
-    branches: [main, 47-create-cd-to-a-single-server]
+    branches: [main]
   pull_request:
     branches: [main]
 
