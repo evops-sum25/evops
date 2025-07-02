@@ -30,9 +30,6 @@ jobs:
         run: |
           cd backend
           cargo check
-        run: |
-          cd backend/client-ext
-          cargo check
 
   test:
     name: Test Suite
