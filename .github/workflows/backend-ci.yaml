@@ -64,8 +64,3 @@ jobs:
           cd ..
           cd server-ext
           cargo clippy --all-targets
-
-                  
-
-
-      
