@@ -2,7 +2,7 @@ name: Website Continuous integration
 
 on:
   push:
-    branches: [main, 2-create-ci-for-website]
+    branches: [main]
   pull_request:
     branches: [main]
 
