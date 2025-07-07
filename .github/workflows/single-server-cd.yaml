@@ -26,6 +26,21 @@ jobs:
               git fetch && \
               git pull && \
               git submodule update --init --force && \
+              cd backend && \
+              git submodule update --init --force && \
+              cd server-ext && \
+              git submodule update --init --force
+              cd .. && \
+              cd .. && \
+              cd ml && \
+              git submodule update --init --force
+              cd server-ext && \
+              git submodule update --init --force && \
+              cd .. && \
+              cd .. && \
+              cd website && \
+              git submodule update --init --force && \
+              cd .. && \
               docker compose down && \
               docker compose build --pull && \
               docker compose up -d"
