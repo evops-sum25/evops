@@ -55,7 +55,7 @@ services:
   ml-server:
     build:
       context: ml/
-      dockerfile: prod.Dockerfile
+      dockerfile: dev.Dockerfile
     restart: unless-stopped
     env_file:
       - ml/.env
