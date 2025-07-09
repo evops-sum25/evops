@@ -71,12 +71,8 @@ services:
     <<: *minio-common
     hostname: minio
     volumes:
-      - type: bind
-        source: /mnt/data/compose
-        target: /mnt/data
-      - type: bind
-        source: /etc/default/minio
-        target: /etc/config.env
+      - miniodata: /mnt/data
 
 volumes:
   pgdata:
+  miniodata:
