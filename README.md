@@ -22,10 +22,6 @@
   docker compose up --build
   ```
 
-  _:warning: Note: the back end may output warnings when you start the
-  application. You just need to wait a little until the ML server starts.
-  We&CloseCurlyQuote;ll try to fix this in future versions._
-
 The services will be available on the following URLs:
 
 - Back end: http://0.0.0.0:8080
