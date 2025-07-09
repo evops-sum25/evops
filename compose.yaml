@@ -71,7 +71,7 @@ services:
     <<: *minio-common
     hostname: minio
     volumes:
-      - miniodata: /mnt/data
+      - miniodata:/mnt/data
 
 volumes:
   pgdata:
