@@ -30,7 +30,7 @@ services:
   backend:
     build:
       context: backend/
-      dockerfile: prod.Dockerfile
+      dockerfile: dev.Dockerfile
     restart: unless-stopped
     depends_on:
       postgres:
@@ -47,7 +47,7 @@ services:
   website:
     build:
       context: website/
-      dockerfile: prod.Dockerfile
+      dockerfile: dev.Dockerfile
     restart: unless-stopped
     depends_on:
       - backend
@@ -57,7 +57,7 @@ services:
   ml:
     build:
       context: ml/
-      dockerfile: prod.Dockerfile
+      dockerfile: dev.Dockerfile
     restart: unless-stopped
     depends_on:
       postgres:
