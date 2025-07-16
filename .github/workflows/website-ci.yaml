@@ -56,6 +56,7 @@ jobs:
       - name: Build client-ext
         run: |
           cd website/client-ext
+          rustup target add wasm32-unknown-unknown
           cargo build --package=evops-extism --release --target=wasm32-unknown-unknown
       - name: Build project
         run: |
