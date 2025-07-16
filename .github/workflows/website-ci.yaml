@@ -17,6 +17,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
+      - name: Install stable toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+          override: true
       - name: Setup pnpm
         uses: pnpm/action-setup@v3
         with:
@@ -39,12 +45,16 @@ jobs:
           cd website
           pnpm install
       - name: Run checks
-        continue-on-error: true # WARNING: will be fixed in future
         run: |
           cd website
           pnpm lint
           pnpm test
-          pnpm typecheck
+          pnpm format:check
+      - name: Build client-ext
+        run: |
+          cd website
+          cd client-ext
+          cargo build --package=evops-extism --release --target=wasm32-unknown-unknown
       - name: Build project
         run: |
           cd website
