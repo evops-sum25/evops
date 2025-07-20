@@ -22,7 +22,6 @@ jobs:
           sshpass -p "${{ secrets.SSH_PASSWORD }}" \
             ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "
               cd ${{ secrets.PROJECT_PATH }} && \
-              git config pull.rebase true && \
               git fetch && \
               git pull && \
               git submodule update --init --force && \
@@ -42,5 +41,4 @@ jobs:
               git submodule update --init --force && \
               cd .. && \
               docker compose down && \
-              docker compose build --pull && \
-              docker compose up -d"
+              docker compose up --build -d"
