@@ -1,5 +1,7 @@
 # EvOps :whale:
 
+Self-hosted ecosystem with web-UI & Android app mayde with recommendation system to publish and notificate about YOUR events.
+
 ## Quick Start
 
 ### How to run the application
